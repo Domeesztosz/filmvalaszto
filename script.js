@@ -46,11 +46,11 @@ function pickMovie() {
   const chosenMovie = movies[randomIndex];
   document.getElementById("result").textContent = `Filmajánló: 🍿 ${chosenMovie}`;
 }
-document.addEventListener('mousemove', (e) => {
+document.addEventListener("mousemove", (e) => {
   const x = e.clientX;
   const y = e.clientY;
 
   document.body.style.background = `
-    radial-gradient(circle at ${x}px ${y}px, rgba(0, 90, 180, 0.4) 0%, rgba(30, 60, 120, 1) 150px)
+    radial-gradient(circle 80px at ${x}px ${y}px, rgba(0,120,255,0.4), rgba(0,30,60,1) 100px)
   `;
 });
