@@ -1,40 +1,29 @@
-let titles = [];
+let items = [];
 
-function addTitle() {
-  const input = document.getElementById("titleInput");
-  const title = input.value.trim();
+function addItem() {
+  const input = document.getElementById("input");
+  const value = input.value.trim();
 
-  if (title) {
-    titles.push(title);
-    updateList();
+  if (value !== "") {
+    items.push(value);
+    const li = document.createElement("li");
+    li.textContent = value;
+    document.getElementById("list").appendChild(li);
     input.value = "";
   }
 }
 
-function updateList() {
-  const ul = document.getElementById("titleList");
-  ul.innerHTML = "";
-
-  titles.forEach((title, index) => {
-    const li = document.createElement("li");
-    li.textContent = title;
-    ul.appendChild(li);
-  });
-}
-
 function pickRandom() {
-  if (titles.length === 0) {
-    document.getElementById("result").textContent = "A lista üres!";
+  if (items.length === 0) {
+    document.getElementById("result").textContent = "Adj hozzá legalább egy címet!";
     return;
   }
 
-  const randomIndex = Math.floor(Math.random() * titles.length);
-  const chosen = titles[randomIndex];
-  document.getElementById("result").textContent = `Ma nézd meg: 🎥 ${chosen}`;
-  const randomIndex = Math.floor(Math.random() * movies.length);
-  const chosenMovie = movies[randomIndex];
-  document.getElementById("result").textContent = `Filmajánló: 🍿 ${chosenMovie}`;
+  const randomIndex = Math.floor(Math.random() * items.length);
+  const selected = items[randomIndex];
+  document.getElementById("result").textContent = `Nézd meg ezt: 🎬 ${selected}`;
 }
+
 function pickMovie() {
   const movies = [
     "Verdák",
@@ -58,4 +47,3 @@ function pickMovie() {
   document.getElementById("result").textContent = `Filmajánló: 🍿 ${chosenMovie}`;
 }
 
-}

@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mit Nézzek Ma?</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Mit nézzek ma?</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🎬 Mit nézzek ma?</h1>
-    <input type="text" id="titleInput" placeholder="Írd be a film vagy sorozat címét..." />
-    <button onclick="addTitle()">Hozzáadás</button>
-    <button onclick="pickRandom()">Sorsolj!</button>
+  <h1>Mit nézzek ma?</h1>
 
-    <h2>Lista:</h2>
-    <ul id="titleList"></ul>
-
-    <div id="result"></div>
+  <input type="text" id="input" placeholder="Írj be filmeket, sorozatokat...">
+  <div class="button-group">
+    <button onclick="addItem()">Hozzáadás</button>
+    <button onclick="pickRandom()">Mit nézzek?</button>
+    <button onclick="pickMovie()">Filmet ajánlok!</button>
   </div>
+
+  <ul id="list"></ul>
+  <p id="result"></p>
+
   <script src="script.js"></script>
-  <button onclick="pickMovie()">Filmet ajánlok!</button>
-</body>
-</html>
+</bod
