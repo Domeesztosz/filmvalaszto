@@ -1,21 +1,173 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Mit nézzek ma?</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Napi Fitnesz Webalkalmazás</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .section {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e3f2fd;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #2196f3;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #1976d2;
+    }
+    .tracker-output {
+      margin-top: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    .food-list {
+      margin-top: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .food-item {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+    ul {
+      margin: 10px 0 0 20px;
+      padding-left: 0;
+    }
+	
+  </style>
+ <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="rainbow-text">Mit nézzek ma?</h1>
-  <input type="text" id="input" placeholder="Írj be filmeket, sorozatokat...">
-  <div class="button-group">
-    <button onclick="addItem()">Hozzáadás</button>
-    <button onclick="pickRandom()">Mit nézzek?</button>
-    <button onclick="pickMovie()">Filmet ajánlok!</button>
+  <div class="container">
+    <h1>🌟 Napi Fitnesz Követés</h1>
+
+    <div class="section">
+      <h2>🚶‍♂️ Lépésszámláló</h2>
+      <label for="lepesInput">Napi lépésszám:</label>
+      <input type="number" id="lepesInput" placeholder="pl. 7500" min="0" />
+      <button onclick="frissitLepesek()">Frissítés</button>
+      <div class="tracker-output" id="lepesKiiras">Ma: 0 / 10000 lépés</div>
+    </div>
+
+    <div class="section">
+      <h2>🍽️ Kalóriabevitel</h2>
+      <label for="etel">Étel neve:</label>
+      <input type="text" id="etel" placeholder="pl. rántotta" />
+      <label for="kaloria">Kalória (kcal):</label>
+      <input type="number" id="kaloria" placeholder="pl. 300" min="0" />
+      <button onclick="hozzaadEtel()">Hozzáadás</button>
+      <div class="food-list" id="etelLista"></div>
+    </div>
+
+    <div class="section">
+      <h2>📊 Napi Összegzés</h2>
+      <div class="tracker-output" id="elegetett">Elégetett kalória: 0 kcal</div>
+      <div class="tracker-output" id="bevitt">Bevitt kalória: 0 kcal</div>
+      <div class="tracker-output" id="megEhetsz">Még ehetsz ma: 0 kcal</div>
+    </div>
+
+    <div class="section">
+      <h2>🏋️‍♀️ Napi edzésajánló</h2>
+      <ul>
+        <li>3×15 fekvőtámasz</li>
+        <li>3×20 guggolás</li>
+        <li>10 perc plank</li>
+        <li>20 perc séta vagy kocogás</li>
+      </ul>
+    </div>
   </div>
 
-  <ul id="list"></ul>
-  <p id="result"></p>
+  <script>
+    let osszesBevitt = 0;
+    let elegetett = 0;
+    const celKaloria = 2000; // napi kalóriacél
+
+    // Frissíti a lépésszámot és az elégetett kalóriát
+    function frissitLepesek() {
+      const lepes = parseInt(document.getElementById("lepesInput").value) || 0;
+      document.getElementById("lepesKiiras").innerText = `Ma: ${lepes} / 10000 lépés`;
+      elegetett = Math.round(lepes * 0.04); // kb. 0.04 kcal / lépés
+      document.getElementById("elegetett").innerText = `Elégetett kalória: ${elegetett} kcal`;
+      frissitTracker();
+    }
+
+    // Hozzáad egy ételt és kalóriát a listához
+    function hozzaadEtel() {
+      const etel = document.getElementById("etel").value.trim();
+      const kal = parseInt(document.getElementById("kaloria").value) || 0;
+
+      if (etel === "") {
+        alert("Kérlek, add meg az étel nevét!");
+        return;
+      }
+      if (kal <= 0) {
+        alert("Kérlek, adj meg egy 0-nál nagyobb kalóriaértéket!");
+        return;
+      }
+
+      osszesBevitt += kal;
+
+      const uj = document.createElement("div");
+      uj.className = "food-item";
+      uj.innerText = `${etel} – ${kal} kcal`;
+      document.getElementById("etelLista").appendChild(uj);
+
+      document.getElementById("bevitt").innerText = `Bevitt kalória: ${osszesBevitt} kcal`;
+
+      // Alaphelyzetbe állítja a mezőket
+      document.getElementById("etel").value = "";
+      document.getElementById("kaloria").value = "";
+
+      frissitTracker();
+    }
+
+    // Frissíti a még ehető kalóriák számát
+    function frissitTracker() {
+      const megmaradt = celKaloria - osszesBevitt + elegetett;
+      document.getElementById("megEhetsz").innerText = `Még ehetsz ma: ${megmaradt} kcal`;
+    }
+  </script>
+  <script src="app.js"></script>
 </body>
 </html>
