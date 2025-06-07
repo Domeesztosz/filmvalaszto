@@ -31,7 +31,11 @@ function pickRandom() {
   const randomIndex = Math.floor(Math.random() * titles.length);
   const chosen = titles[randomIndex];
   document.getElementById("result").textContent = `Ma nézd meg: 🎥 ${chosen}`;
-  function pickMovie() {
+  const randomIndex = Math.floor(Math.random() * movies.length);
+  const chosenMovie = movies[randomIndex];
+  document.getElementById("result").textContent = `Filmajánló: 🍿 ${chosenMovie}`;
+}
+function pickMovie() {
   const movies = [
     "Verdák",
     "Angry Birds",
