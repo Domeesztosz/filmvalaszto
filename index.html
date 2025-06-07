@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mit Nézzek Ma?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Mit nézzek ma?</h1>
+    <input type="text" id="titleInput" placeholder="Írd be a film vagy sorozat címét..." />
+    <button onclick="addTitle()">Hozzáadás</button>
+    <button onclick="pickRandom()">Sorsolj!</button>
+
+    <h2>Lista:</h2>
+    <ul id="titleList"></ul>
+
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
