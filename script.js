@@ -46,4 +46,3 @@ function pickMovie() {
   const chosenMovie = movies[randomIndex];
   document.getElementById("result").textContent = `Filmajánló: 🍿 ${chosenMovie}`;
 }
-
