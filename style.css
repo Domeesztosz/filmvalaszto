@@ -1,88 +1,61 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
     text-align: center;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #e0eaff;
     margin: 0;
     padding: 2rem;
-    min-height: 100vh;
 }
 
-h1 {
-    color: #cce4f7;
-    text-shadow: 0 0 5px #11457e;
-    margin-bottom: 1.5rem;
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #2e2e3f;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 input {
-    padding: 0.6rem;
-    font-size: 16px;
-    width: 60%;
-    max-width: 320px;
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 8px #4299e1;
-    outline: none;
-    margin-bottom: 1.2rem;
-    transition: box-shadow 0.3s;
-}
-
-input:focus {
-    box-shadow: 0 0 12px #a3c9ff;
-}
-
-.button-group {
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 button {
-    background-color: #007acc;
-    color: white;
+    padding: 10px 15px;
+    margin: 0.5rem;
     border: none;
-    border-radius: 10px;
-    padding: 0.6rem 1.2rem;
-    font-size: 16px;
-    margin: 0.3rem;
+    border-radius: 8px;
+    background-color: #00b894;
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 0 8px #005a9e;
-    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-    background-color: #005a9e;
-    box-shadow: 0 0 12px #99caff;
+    background-color: #019874;
 }
 
 ul {
     list-style: none;
     padding: 0;
-    max-width: 320px;
-    margin: 0 auto 1rem auto;
-    color: #d7e6fb;
-    text-align: left;
-    box-shadow: 0 0 10px #004a8f;
-    background: rgba(0, 72, 143, 0.3);
-    border-radius: 10px;
-    padding: 1rem;
-    max-height: 200px;
-    overflow-y: auto;
 }
 
 li {
-    padding: 0.3rem 0;
-    border-bottom: 1px solid #3a74b3;
-}
-
-li:last-child {
-    border-bottom: none;
+    background-color: #3e3e5a;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 #result {
-    margin-top: 1.2rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #d1e7ff;
-    text-shadow: 0 0 6px #3399ff;
-    min-height: 2em;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fdcb6e;
 }
 
