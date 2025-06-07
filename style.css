@@ -1,160 +1,69 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #e0eaff;
-    margin: 0;
-    padding: 2rem;
-    min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
 }
-
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 h1 {
-    color: #cce4f7;
-    text-shadow: 0 0 5px #11457e;
-    margin-bottom: 1.5rem;
-}
-
-input {
-    padding: 0.6rem;
-    font-size: 16px;
-    width: 60%;
-    max-width: 320px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 8px #4299e1;
-    outline: none;
-    margin-bottom: 1.2rem;
-    transition: box-shadow 0.3s;
-}
-
-input:focus {
-    box-shadow: 0 0 12px #a3c9ff;
-}
-
-.button-group {
-    margin-bottom: 1.5rem;
-}
-
-button {
-    background-color: #007acc;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 0.6rem 1.2rem;
-    font-size: 16px;
-    margin: 0.3rem;
-    cursor: pointer;
-    box-shadow: 0 0 8px #005a9e;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-button:hover {
-    background-color: #87aac4;
-    box-shadow: 0 0 12px #99caff;
-}
-
-ul {
-    list-style: none;
-    padding: 1rem;
-    max-width: 320px;
-    margin: 0 auto 1rem auto;
-    color: #d7e6fb;
-    text-align: left;
-    box-shadow: 0 0 15px rgba(100, 180, 255, 0.6);
-    background: rgba(100, 180, 255, 0.15);
-    border-radius: 10px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-li {
-    padding: 0.3rem 0.6rem;
-    border-bottom: 1px solid rgba(100, 180, 255, 0.3);
-    background-color: rgba(100, 180, 255, 0.25);
-    color: #e0f0ff;
-    border-radius: 6px;
-    margin-bottom: 0.3rem;
-    transition: background-color 0.3s ease;
-}
-
-
-li:last-child {
-    border-bottom: none;
-}
-
-#result {
-    margin-top: 1.2rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #d1e7ff;
-    text-shadow: 0 0 6px #3399ff;
-    min-height: 2em;
-}
-body {
-  margin: 0;
-  min-height: 100vh;
-  transition: background 0.05s linear;
-  background-color: #001e3c; /* sötét alap */
-  overflow: hidden;
-}
-.rainbow-text {
-  font-size: 3rem;
-  font-weight: bold;
   text-align: center;
-  margin: 30px 0;
-
-  background: linear-gradient(
-    90deg,
-    #ff0000,
-    #ff9900,
-    #ffff00,
-    #33ff00,
-    #00ffff,
-    #0066ff,
-    #cc00ff,
-    #ff0000
-  );
-  background-size: 300%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: rainbowShift 5s linear infinite;
 }
-
-@keyframes rainbowShift {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 100%;
-  }
+.section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e3f2fd;
+  border-radius: 8px;
 }
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0a0a23;
-  cursor: none; /* 🔵 elrejti a kurzort */
-  overflow: hidden;
+label {
+  display: block;
+  margin-top: 10px;
 }
-
-.trail {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(0, 200, 255, 0.6); /* világoskék, áttetsző */
-  pointer-events: none;
-  animation: fadeOut 0.8s ease-out forwards;
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
 }
-
-@keyframes fadeOut {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.2);
-    opacity: 0;
-  }
+button {
+  background-color: #2196f3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #1976d2;
+}
+.tracker-output {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.food-list {
+  margin-top: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+.food-item {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+ul {
+  margin: 10px 0 0 20px;
+  padding-left: 0;
 }
