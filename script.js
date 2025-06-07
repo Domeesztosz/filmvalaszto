@@ -31,4 +31,27 @@ function pickRandom() {
   const randomIndex = Math.floor(Math.random() * titles.length);
   const chosen = titles[randomIndex];
   document.getElementById("result").textContent = `Ma nézd meg: 🎥 ${chosen}`;
+  function pickMovie() {
+  const movies = [
+    "Verdák",
+    "Angry Birds",
+    "Szörny Rt",
+    "Jégkorszak",
+    "Így neveld a sárkányodat",
+    "Minions",
+    "Paddington",
+    "Shrek",
+    "Oroszlánkirály",
+    "Nagyon vadon",
+    "Zootopia",
+    "Star Wars",
+    "Pókember",
+    "Harry Potter"
+  ];
+
+  const randomIndex = Math.floor(Math.random() * movies.length);
+  const chosenMovie = movies[randomIndex];
+  document.getElementById("result").textContent = `Filmajánló: 🍿 ${chosenMovie}`;
+}
+
 }
