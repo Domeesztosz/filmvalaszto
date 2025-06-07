@@ -1,6 +1,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #1c0b0b
+  background-color: #144671
+
 ;
   color: #fff;
   text-align: center;
@@ -11,7 +12,8 @@ body {
 .container {
   max-width: 600px;
   margin: auto;
-  background-color: #320808;
+  background-color: #165a97
+;
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -31,7 +33,8 @@ button {
   margin: 0.5rem;
   border: none;
   border-radius: 8px;
-  background-color: #b0c23a
+  background-color: #2297ff
+
 ;
   color: white;
   font-size: 1rem;
@@ -39,7 +42,8 @@ button {
 }
 
 button:hover {
-  background-color: #b0c23a
+  background-color: #2297ff
+
 ;
 }
 
@@ -49,7 +53,8 @@ ul {
 }
 
 li {
-  background-color: #c2913a
+  background-color: #91acc3
+
 ;
   margin: 5px;
   padding: 8px;
@@ -60,5 +65,6 @@ li {
   margin-top: 1.5rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #fdcb6e;
+  color: #b3dbff
+;
 }
