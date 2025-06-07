@@ -47,12 +47,10 @@ function pickMovie() {
   document.getElementById("result").textContent = `Filmajánló: 🍿 ${chosenMovie}`;
 }
 document.addEventListener('mousemove', (e) => {
-  const x = e.clientX / window.innerWidth;
-  const y = e.clientY / window.innerHeight;
+  const x = e.clientX;
+  const y = e.clientY;
 
-  const r = Math.floor(30 + x * 40);  // 30–70
-  const g = Math.floor(60 + y * 60);  // 60–120
-  const b = 180; // fix kékes árnyalat
-
-  document.body.style.background = `rgb(${r}, ${g}, ${b})`;
+  document.body.style.background = `
+    radial-gradient(circle at ${x}px ${y}px, rgba(0, 90, 180, 0.4) 0%, rgba(30, 60, 120, 1) 150px)
+  `;
 });

@@ -85,3 +85,6 @@ li:last-child {
     text-shadow: 0 0 6px #3399ff;
     min-height: 2em;
 }
+body {
+  transition: background 0.15s ease;
+}
