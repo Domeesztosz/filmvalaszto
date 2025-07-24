@@ -40,6 +40,7 @@ function pickMovie() {
     "Star Wars",
     "Pókember",
     "Harry Potter"
+    "repcsik"
   ];
 
   const randomIndex = Math.floor(Math.random() * movies.length);
