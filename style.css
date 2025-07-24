@@ -49,34 +49,29 @@ button {
 }
 
 button:hover {
-    background-color: #87aac4;
+    background-color: #005a9e;
     box-shadow: 0 0 12px #99caff;
 }
 
 ul {
     list-style: none;
-    padding: 1rem;
+    padding: 0;
     max-width: 320px;
     margin: 0 auto 1rem auto;
     color: #d7e6fb;
     text-align: left;
-    box-shadow: 0 0 15px rgba(100, 180, 255, 0.6);
-    background: rgba(100, 180, 255, 0.15);
+    box-shadow: 0 0 10px #004a8f;
+    background: rgba(0, 72, 143, 0.3);
     border-radius: 10px;
+    padding: 1rem;
     max-height: 200px;
     overflow-y: auto;
 }
 
 li {
-    padding: 0.3rem 0.6rem;
-    border-bottom: 1px solid rgba(100, 180, 255, 0.3);
-    background-color: rgba(100, 180, 255, 0.25);
-    color: #e0f0ff;
-    border-radius: 6px;
-    margin-bottom: 0.3rem;
-    transition: background-color 0.3s ease;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #3a74b3;
 }
-
 
 li:last-child {
     border-bottom: none;
@@ -157,4 +152,5 @@ body {
     transform: scale(0.2);
     opacity: 0;
   }
+}
 }
